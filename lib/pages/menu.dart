@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:provider/provider.dart';
 import 'package:study_app/pages/login.dart';
+import 'package:study_app/pages/study_forum/post_home.dart';
 import 'package:study_app/widgets/drawer.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -92,10 +93,11 @@ class MyHomePage extends StatelessWidget {
                     color: Colors.yellow,
                     child: InkWell(
                       onTap: () {
-                        ScaffoldMessenger.of(context)
-                        ..hideCurrentSnackBar()
-                        ..showSnackBar(const SnackBar(
-                          content: Text("Kamu telah menekan tombol Forum!")));
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const PostHomePage()),
+                        );
                       },
                       child: Container(
                         padding: const EdgeInsets.all(8),
