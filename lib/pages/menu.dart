@@ -62,11 +62,11 @@ class MyHomePage extends StatelessWidget {
                     color: Colors.yellow,
                     child: InkWell( // Area responsive terhadap sentuhan
                       onTap: () {
-                        // Memunculkan SnackBar ketika diklik
-                        ScaffoldMessenger.of(context)
-                        ..hideCurrentSnackBar()
-                        ..showSnackBar(const SnackBar(
-                          content: Text("Kamu telah menekan tombol Study Plan!")));
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const PlannerPage()),
+                        );
                       },
                       child: Container( // Container untuk menyimpan Icon dan Text
                         padding: const EdgeInsets.all(8),
