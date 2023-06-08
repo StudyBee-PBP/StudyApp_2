@@ -93,7 +93,7 @@ class _MyFormPageState extends State<MyFormPage> {
                           if (_formKey.currentState!.validate()) {
                             // Memunculkan data (di sini)
                             final response = await request.postJson(
-                            "http://127.0.0.1:8000/tracker/create-flutter/",
+                            "http://127.0.0.1:8000/diary/create-flutter/",
                             convert.jsonEncode(<String, String>{
                                 'description': _deskripsiDiary,
                             }));
