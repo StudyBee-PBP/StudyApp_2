@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:study_app/model/forum_post.dart';
 import 'package:http/http.dart' as http;
 import 'package:study_app/pages/menu.dart';
+import 'package:study_app/pages/study_forum/add_replies.dart';
 import 'package:study_app/pages/study_forum/post_home.dart';
 import 'package:study_app/pages/study_forum/widgets/selected_post.dart';
 import 'package:study_app/pages/study_forum/widgets/show_replies.dart';
@@ -51,6 +52,26 @@ class _DiscussionPageState extends State<DiscussionPage>{
               "Balasan",
               textAlign: TextAlign.left,
               style: TextStyle(fontSize: 24.0),
+            ),
+          ),
+          SizedBox(height: 12.0,),
+          Container(
+            width: MediaQuery.of(context).size.width * 0.5,
+            child: OutlinedButton(
+              onPressed: () {
+                // Perform button action
+                Navigator.pushReplacement(
+                  context, 
+                  MaterialPageRoute(
+                    builder: (context) => AddRepliesPage(pk: pk)
+                  )
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                primary: Colors.white,
+                onPrimary: Colors.black45,
+              ),
+              child: Icon(Icons.add),
             ),
           ),
           ShowReplies(pk: pk),
