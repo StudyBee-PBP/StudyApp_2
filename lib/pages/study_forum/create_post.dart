@@ -24,7 +24,7 @@ class _CreatePostPageState extends State<CreatePostPage> {
     final request = context.watch<CookieRequest>();
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Diskusi"),
+        title: const Text("Buat Forum"),
         centerTitle: true,
         leading: IconButton(
           onPressed: () {
@@ -121,7 +121,7 @@ class _CreatePostPageState extends State<CreatePostPage> {
                     style: TextStyle(color: Colors.black),
                   ),
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.amber),
+                    backgroundColor: MaterialStateProperty.all(Colors.yellow),
                   ),
                   onPressed: () async {
                     if (_formKey.currentState!.validate()) {
