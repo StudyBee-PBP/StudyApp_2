@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:study_app/model/forum_post.dart';
 import 'package:http/http.dart' as http;
 import 'package:study_app/pages/menu.dart';
+import 'package:study_app/pages/study_forum/create_post.dart';
 import 'package:study_app/pages/study_forum/discussion.dart';
 
 class Tab1Content extends StatefulWidget {
@@ -49,6 +50,12 @@ class _Tab1ContentState extends State<Tab1Content> {
           child: OutlinedButton(
             onPressed: () {
               // Perform button action
+              Navigator.pushReplacement(
+                context, 
+                MaterialPageRoute(
+                  builder: (context) => const CreatePostPage()
+                )
+              );
             },
             style: ElevatedButton.styleFrom(
               primary: Colors.white,
