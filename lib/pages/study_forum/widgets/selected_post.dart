@@ -18,7 +18,7 @@ class _SelectedPostState extends State<SelectedPost> {
     final int pk = widget.pk;
     // TODO: Ganti URL dan jangan lupa tambahkan trailing slash (/) di akhir URL!
     var url = Uri.parse(
-        'http://localhost:8000/forum/json-post/${pk}');
+        'https://study-bee.domcloud.io/forum/json-post/${pk}');
     var response = await http.get(
         url,
         headers: {

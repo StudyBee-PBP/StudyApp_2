@@ -128,7 +128,7 @@ class _CreatePostPageState extends State<CreatePostPage> {
                       // Kirim ke Django dan tunggu respons
                       // TODO: Ganti URL dan jangan lupa tambahkan trailing slash (/) di akhir URL!
                       final response = await request.postJson(
-                      "http://localhost:8000/forum/create-flutter/",
+                      "https://study-bee.domcloud.io/forum/create-flutter/",
                       convert.jsonEncode(<String, String>{
                           'username': _username,
                           'title': _title,

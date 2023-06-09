@@ -95,7 +95,7 @@ class _AddRepliesPageState extends State<AddRepliesPage> {
                       // Kirim ke Django dan tunggu respons
                       // TODO: Ganti URL dan jangan lupa tambahkan trailing slash (/) di akhir URL!
                       final response = await request.postJson(
-                      "http://localhost:8000/forum/add-replies-flutter/",
+                      "https://study-bee.domcloud.io/forum/add-replies-flutter/",
                       convert.jsonEncode(<String, String>{
                           'username': _username,
                           'id': post_pk.toString(),

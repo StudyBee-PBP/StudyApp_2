@@ -18,7 +18,7 @@ class _Tab1ContentState extends State<Tab1Content> {
   Future<List<Post>> fetchPost() async {
     // TODO: Ganti URL dan jangan lupa tambahkan trailing slash (/) di akhir URL!
     var url = Uri.parse(
-        'http://localhost:8000/forum/json-post/');
+        'https://study-bee.domcloud.io/forum/json-post/');
     var response = await http.get(
         url,
         headers: {
