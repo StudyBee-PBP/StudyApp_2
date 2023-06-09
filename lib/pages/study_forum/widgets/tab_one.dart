@@ -32,10 +32,11 @@ class _Tab1ContentState extends State<Tab1Content> {
 
     // melakukan konversi data json menjadi object Post
     List<Post> listPost = [];
-    for (var d in data) {
-        if (d != null) {
-            listPost.add(Post.fromJson(d));
-        }
+    for (var i = data.length - 1; i >= 0; i--) {
+      var d = data[i];
+      if (d != null) {
+          listPost.add(Post.fromJson(d));
+      }
     }
     return listPost;
   }
