@@ -1,7 +1,9 @@
+import 'package:flutter/gestures.dart';
 import 'package:study_app/pages/menu.dart';
 import 'package:flutter/material.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:provider/provider.dart';
+import 'package:study_app/pages/register.dart';
 import 'package:study_app/widgets/shared_data.dart';
 
 void main() {
@@ -16,7 +18,7 @@ Widget build(BuildContext context) {
   return MaterialApp(
       title: 'Login',
       theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.yellow,
   ),
   home: const LoginPage(),
   );
@@ -106,6 +108,32 @@ class _LoginPageState extends State<LoginPage> {
                 }
               },
               child: const Text('Login'),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Center(
+                child: RichText(
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: "Belum punya akun? ",
+                        style:  TextStyle(color: Colors.black),
+                      ),
+                      TextSpan(
+                        text: "Registrasi",
+                        style: TextStyle(color: Colors.blue),
+                        recognizer: TapGestureRecognizer() 
+                          ..onTap = () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(builder: (context) => const RegisterApp()),
+                            );
+                          }
+                      )
+                    ]
+                  )
+                ),
+              ),
             ),
           ],
         ),
