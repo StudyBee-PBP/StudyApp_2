@@ -48,25 +48,23 @@ class _Tab2ContentState extends State<Tab2Content> {
     return Column(
       children: <Widget>[
         SizedBox(height: 20),
-        Container(
-          width: MediaQuery.of(context).size.width * 0.95,
-          child: OutlinedButton(
-            onPressed: () {
-              // Perform button action
-              Navigator.pushReplacement(
-                context, 
-                MaterialPageRoute(
-                  builder: (context) => const CreatePostPage()
-                )
-              );
-            },
-            style: ElevatedButton.styleFrom(
-              primary: Colors.white,
-              onPrimary: Colors.black45,
-            ),
-            child: Icon(Icons.add),
+        OutlinedButton(
+          onPressed: () {
+            // Perform button action
+            Navigator.pushReplacement(
+              context, 
+              MaterialPageRoute(
+                builder: (context) => const CreatePostPage()
+              )
+            );
+          },
+          style: ElevatedButton.styleFrom(
+            primary: Colors.white,
+            onPrimary: Colors.black45,
           ),
+          child: Icon(Icons.add),
         ),
+        SizedBox(height: 4.0,),
         Expanded(
           child: FutureBuilder(
             future: fetchPost(), 
