@@ -60,8 +60,7 @@ class _ShowRepliesState extends State<ShowReplies> {
               ],
             );
           } else {
-            return Container(
-              height: MediaQuery.of(context).size.height,
+            return Expanded(
               child: ListView.builder(
                 itemCount: snapshot.data!.length,
                 itemBuilder: (_, index) => Container(

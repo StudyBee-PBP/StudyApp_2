@@ -41,11 +41,10 @@ class _DiscussionPageState extends State<DiscussionPage>{
             Icons.arrow_back_sharp)
         ),
       ),
-      body: ListView(
+      body: Column(
         children: [
-          SizedBox(height: 24.0,),
+          SizedBox(height: 16.0,),
           SelectedPost(pk: pk),
-          SizedBox(height: 10.0), // Add some spacing between SelectedPost and "halo" text
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Text(
@@ -55,24 +54,21 @@ class _DiscussionPageState extends State<DiscussionPage>{
             ),
           ),
           SizedBox(height: 12.0,),
-          Container(
-            width: MediaQuery.of(context).size.width * 0.5,
-            child: OutlinedButton(
-              onPressed: () {
-                // Perform button action
-                Navigator.pushReplacement(
-                  context, 
-                  MaterialPageRoute(
-                    builder: (context) => AddRepliesPage(pk: pk)
-                  )
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                primary: Colors.white,
-                onPrimary: Colors.black45,
-              ),
-              child: Icon(Icons.add),
+          OutlinedButton(
+            onPressed: () {
+              // Perform button action
+              Navigator.pushReplacement(
+                context, 
+                MaterialPageRoute(
+                  builder: (context) => AddRepliesPage(pk: pk)
+                )
+              );
+            },
+            style: ElevatedButton.styleFrom(
+              primary: Colors.white,
+              onPrimary: Colors.black45,
             ),
+            child: Icon(Icons.add),
           ),
           ShowReplies(pk: pk),
         ],
