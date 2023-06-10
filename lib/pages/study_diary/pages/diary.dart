@@ -17,7 +17,7 @@ class _DiaryPageState extends State<DiaryPage> {
 Future<List<DiaryRecord>> fetchDiaryRecord() async {
     // TODO: Ganti URL dan jangan lupa tambahkan trailing slash (/) di akhir URL!
     var url = Uri.parse(
-        'http://127.0.0.1:8000/diary/json/');
+        'https://study-bee.domcloud.io/diary/json/');
     var response = await http.get(
         url,
         headers: {
