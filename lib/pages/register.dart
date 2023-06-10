@@ -42,7 +42,6 @@ class _RegisterPageState extends State<RegisterPage> {
       ), 
       body: Form(
         key: _formKey,
-        autovalidateMode: AutovalidateMode.always,
         child: Center(
           child: SingleChildScrollView(
             child: Container(
@@ -56,6 +55,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       decoration: InputDecoration(
                         labelText: "Username",
                       ),
+                      autovalidateMode: AutovalidateMode.onUserInteraction,
                       validator: (String? value) {
                         if (value == null || value.isEmpty) {
                           return 'Username tidak boleh kosong!';
@@ -76,6 +76,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       decoration: InputDecoration(
                         labelText: "Password",
                       ),
+                      autovalidateMode: AutovalidateMode.onUserInteraction,
                       validator: (String? value) {
                         if (value == null || value.isEmpty) {
                           return 'Password tidak boleh kosong!';
@@ -94,6 +95,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       decoration: InputDecoration(
                         labelText: "Confirm Password",
                       ),
+                      autovalidateMode: AutovalidateMode.onUserInteraction,
                       validator: (String? value) {
                         if (value == null || value.isEmpty) {
                           return 'Konfirmasi password tidak boleh kosong!';
