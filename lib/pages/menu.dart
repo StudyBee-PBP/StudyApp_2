@@ -5,6 +5,7 @@ import 'package:study_app/pages/login.dart';
 import 'package:study_app/pages/study_diary/pages/diary.dart';
 import 'package:study_app/pages/study_diary/pages/diary_home.dart';
 import 'package:study_app/pages/study_forum/post_home.dart';
+import 'package:study_app/pages/study_plan/planner.dart';
 import 'package:study_app/widgets/drawer.dart';
 
 class MyHomePage extends StatelessWidget {

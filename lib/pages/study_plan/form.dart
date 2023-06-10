@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 
 import 'dart:convert' as convert;
 
-import 'package:study_app/pages/planner.dart';
+import 'package:study_app/pages/study_plan/planner.dart';
 
 class PlannerFormPage extends StatefulWidget {
   const PlannerFormPage({super.key});
@@ -302,12 +302,14 @@ class _PlannerFormPageState extends State<PlannerFormPage> {
                             ),
                             onPressed: () async {
                               if (_formKey.currentState!.validate()) {
+                                // Menambahkan variabel untuk menyesuaikan format field date
+                                final formattedDate = DateFormat('yyyy-MM-dd').format(_date);
                                 final response = await request.postJson(
-                                  "https://study-bee.domcloud.io/planner/add-flutter",
+                                  "https://study-bee.domcloud.io/planner/add-flutter/",
                                   convert.jsonEncode(<String, String>{
                                     'name': _name,
                                     'type': type,
-                                    'date': _date.toString(),
+                                    'date': formattedDate,
                                     'subject': _subject.toString(),
                                     'location': _location,
                                     'description': _description
