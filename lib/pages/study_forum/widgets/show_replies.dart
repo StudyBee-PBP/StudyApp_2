@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:study_app/model/forum_replies.dart';
 import 'package:http/http.dart' as http;
@@ -92,22 +93,14 @@ class _ShowRepliesState extends State<ShowReplies> {
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Row(
-                                        children: <Widget> [
-                                          Text(
-                                            "${snapshot.data![index].fields.username}",
-                                            style: TextStyle(
-                                              color: Colors.grey.withOpacity(0.6)
-                                            ),
-                                          ),
-                                          SizedBox(width: 15),
-                                          Text(
-                                            "${snapshot.data![index].fields.date}",
-                                            style: TextStyle(
-                                              color: Colors.grey.withOpacity(0.6)
-                                            ),
-                                          )
-                                        ],
+                                      Text(
+                                        "by ${snapshot.data![index].fields.username} - ${
+                                          DateFormat('EEEE, d MMMM yyyy, hh:mm a').format(
+                                          DateTime.parse('${snapshot.data![index].fields.date}'
+                                          ))}",
+                                        style: TextStyle(
+                                          color: Colors.black87
+                                        ),
                                       )
                                     ]
                                   ),
@@ -122,8 +115,10 @@ class _ShowRepliesState extends State<ShowReplies> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
-                            Text(
-                              "${snapshot.data![index].fields.content}"
+                            Flexible(
+                              child: Text(
+                                "${snapshot.data![index].fields.content}"
+                              ),
                             )
                           ]
                         ),
