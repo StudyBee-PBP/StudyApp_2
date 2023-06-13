@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-//import 'package:intl/intl.dart';
+import 'package:intl/intl.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:provider/provider.dart';
 
@@ -39,7 +39,7 @@ class _PlannerFormPageState extends State<PlannerFormPage> {
             child: Container(
               padding: const EdgeInsets.all(20.0),
               child: Column(children: [
-                                  ListTile(
+                  ListTile(
                   title: const Text('Tipe Belajar:'),
                   leading: type == 'Individual'
                       ? const Icon(Icons.person)
@@ -128,9 +128,9 @@ class _PlannerFormPageState extends State<PlannerFormPage> {
                       return null;
                     },
                     controller: TextEditingController(
-                    //  text: _date != null
-                      //    ? DateFormat('yyyy-MM-dd').format(_date!)
-                      //    : '',
+                      text: _date != null
+                          ? DateFormat('yyyy-MM-dd').format(_date!)
+                          : '',
                     ),
                     onSaved: (value) {
                       if (value != null) {
