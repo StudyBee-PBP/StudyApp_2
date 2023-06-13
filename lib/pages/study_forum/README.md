@@ -15,9 +15,3 @@ On the other hand, when you replace the ListView with a Column, all the child wi
 
 
 https://github.com/ally-commits/flutter-forum-ui.git --> post layout
-
-https://stackoverflow.com/questions/51930754/flutter-wrapping-text --> content text wrapping
-
-formatted date using intl library:
-- https://api.flutter.dev/flutter/intl/DateFormat-class.html
-- https://stackoverflow.com/questions/69492760/dateformat-parse-from-json 

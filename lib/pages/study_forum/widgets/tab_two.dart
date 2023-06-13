@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:study_app/model/forum_post.dart';
 import 'package:http/http.dart' as http;
@@ -143,14 +142,22 @@ class _Tab2ContentState extends State<Tab2Content> {
                                               ),
                                             ),
                                             SizedBox(height: 2.0),
-                                            Text(
-                                              "by ${snapshot.data![index].fields.username} - ${
-                                                DateFormat('EEEE, d MMMM yyyy, hh:mm a').format(
-                                                DateTime.parse('${snapshot.data![index].fields.date}'
-                                                ))}",
-                                              style: TextStyle(
-                                                color: Colors.black87
-                                              ),
+                                            Row(
+                                              children: <Widget> [
+                                                Text(
+                                                  "${snapshot.data![index].fields.username}",
+                                                  style: TextStyle(
+                                                    color: Colors.grey.withOpacity(0.6)
+                                                  ),
+                                                ),
+                                                SizedBox(width: 15),
+                                                Text(
+                                                  "${snapshot.data![index].fields.date}",
+                                                  style: TextStyle(
+                                                    color: Colors.grey.withOpacity(0.6)
+                                                  ),
+                                                )
+                                              ],
                                             )
                                           ]
                                         ),
@@ -165,10 +172,8 @@ class _Tab2ContentState extends State<Tab2Content> {
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: <Widget>[
-                                  Flexible(
-                                    child: Text(
-                                      "${snapshot.data![index].fields.content}"
-                                    ),
+                                  Text(
+                                    "${snapshot.data![index].fields.content}"
                                   )
                                 ]
                               ),
