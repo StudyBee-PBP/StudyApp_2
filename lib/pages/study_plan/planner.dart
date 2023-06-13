@@ -17,10 +17,11 @@ class PlannerPage extends StatefulWidget {
 }
 
 class _PlannerPageState extends State<PlannerPage> {
-  // delete: get http => null;
+  get http => null;
+
     Future<List<StudyPlan>> fetchStudyPlan() async {
       var url = Uri.parse(
-          'https://study-bee.domcloud.io/planner/json/');
+          'https://study-bee.domcloud.io/planner/json');
       var response = await http.get(
           url,
           headers: {

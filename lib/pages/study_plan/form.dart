@@ -302,14 +302,12 @@ class _PlannerFormPageState extends State<PlannerFormPage> {
                             ),
                             onPressed: () async {
                               if (_formKey.currentState!.validate()) {
-                                // Menambahkan variabel untuk menyesuaikan format field date
-                                final formattedDate = DateFormat('yyyy-MM-dd').format(_date);
                                 final response = await request.postJson(
-                                  "https://study-bee.domcloud.io/planner/add-flutter/",
+                                  "https://study-bee.domcloud.io/planner/add-flutter",
                                   convert.jsonEncode(<String, String>{
                                     'name': _name,
                                     'type': type,
-                                    'date': formattedDate,
+                                    'date': _date.toString(),
                                     'subject': _subject.toString(),
                                     'location': _location,
                                     'description': _description
