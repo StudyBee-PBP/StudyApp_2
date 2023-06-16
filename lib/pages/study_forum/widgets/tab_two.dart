@@ -6,6 +6,7 @@ import 'package:study_app/model/forum_post.dart';
 import 'package:http/http.dart' as http;
 import 'package:study_app/pages/study_forum/create_post.dart';
 import 'package:study_app/pages/study_forum/discussion.dart';
+import 'package:study_app/pages/study_forum/post_home.dart';
 import 'package:study_app/widgets/shared_data.dart';
 
 class Tab2Content extends StatefulWidget {
@@ -18,6 +19,45 @@ class Tab2Content extends StatefulWidget {
 class _Tab2ContentState extends State<Tab2Content> {
   String _username = SharedData.stored_username;
 
+  Future<void> deletePost(String id) async {
+    var url = Uri.parse('https://study-bee.domcloud.io/forum/delete-flutter/${id}');
+    final response = await http.delete(
+      url,
+      headers: <String, String>{
+        "Access-Control-Allow-Origin": "*",
+        'Content-Type': 'application/json',
+      },
+    );
+    if (response.statusCode == 200) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => PostHomePage()),
+      );
+      ScaffoldMessenger.of(context)
+      ..hideCurrentSnackBar()
+      ..showSnackBar(
+          SnackBar(content: Text("Post berhasil dihapus.")));
+    } else {
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          icon: Icon(Icons.cancel_sharp),
+          iconColor: Colors.red,
+          title: const Text('Post gagal dihapus'),
+          content: Text("Silahkan coba lagi"),
+          actions: [
+            TextButton(
+              child: const Text('OK'),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        ),
+      );
+    }
+  }
+  
   Future<List<Post>> fetchPost() async {
     // TODO: Ganti URL dan jangan lupa tambahkan trailing slash (/) di akhir URL!
     var url = Uri.parse(
@@ -156,7 +196,17 @@ class _Tab2ContentState extends State<Tab2Content> {
                                         ),
                                       )
                                     ],
-                                  )
+                                  ),
+                                  PopupMenuButton(
+                                    itemBuilder: (BuildContext context) => [
+                                      PopupMenuItem(
+                                        onTap: () {
+                                          deletePost("${snapshot.data![index].pk}");
+                                        },
+                                        child: Text("Hapus")
+                                      ),
+                                    ]
+                                  ) 
                                 ]
                               ),
                             ),
