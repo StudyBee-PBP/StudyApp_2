@@ -4,7 +4,6 @@ import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:study_app/model/forum_post.dart';
 import 'package:http/http.dart' as http;
-import 'package:study_app/pages/menu.dart';
 import 'package:study_app/pages/study_forum/create_post.dart';
 import 'package:study_app/pages/study_forum/discussion.dart';
 

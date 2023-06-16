@@ -2,7 +2,6 @@ import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:study_app/pages/study_forum/discussion.dart';
 import 'package:study_app/widgets/shared_data.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'dart:convert' as convert;
 

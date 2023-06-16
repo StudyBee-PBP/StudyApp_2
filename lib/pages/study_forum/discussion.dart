@@ -1,15 +1,8 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:study_app/model/forum_post.dart';
-import 'package:http/http.dart' as http;
-import 'package:study_app/pages/menu.dart';
 import 'package:study_app/pages/study_forum/add_replies.dart';
 import 'package:study_app/pages/study_forum/post_home.dart';
 import 'package:study_app/pages/study_forum/widgets/selected_post.dart';
 import 'package:study_app/pages/study_forum/widgets/show_replies.dart';
-import 'package:study_app/pages/study_forum/widgets/tab_one.dart';
-import 'package:study_app/pages/study_forum/widgets/tab_two.dart';
 
 class DiscussionPage extends StatefulWidget {
   final int pk;
